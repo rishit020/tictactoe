@@ -1,0 +1,126 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background gradient */
+body {
+    background: linear-gradient(135deg, #ff8c00, #ff0080); /* Dynamic gradient */
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+/* Game container */
+.game-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 350px;
+}
+
+/* Game board */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Ensures the squares fit */
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    margin: 20px auto;
+}
+
+/* Cells */
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #f7f7f7;
+    border: 2px solid #ccc;
+    font-size: 2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 10px; /* Rounded corners for cells */
+}
+
+/* Hover effect on cells */
+.cell:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}
+
+/* Soft color after click */
+.cell.clicked {
+    background-color: #e0f7fa; /* Light blue for clicked square */
+    pointer-events: none; /* Prevent further clicks */
+}
+
+/* Status message */
+.status {
+    font-size: 1.2em;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Result screen */
+.result-screen {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Fade-in animation for result screen */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Result message */
+.result-message {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #ff0080;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff4f80;
+}
+
+/* Smooth animation for button hover */
+button:active {
+    transform: scale(0.95);
+}
